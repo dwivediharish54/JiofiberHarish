@@ -43,6 +43,7 @@
               <th>Date</th>
               <th>Time</th>
               <th>Status</th>
+              <th>Action</th>
               <th>Message</th>
             </tr>
           </thead>
@@ -96,7 +97,16 @@
             <td>${booking.serviceType}</td>
             <td>${booking.preferredDate}</td>
             <td>${booking.preferredTime}</td>
-            <td>${booking.status}</td>
+            <td>${booking.status}</td> 
+            <td>
+<select onchange="updateStatus(${index}, this.value)">
+  <option value="Pending" ${booking.status === 'Pending' ? 'selected' : ''}>Pending</option>
+  <option value="Completed" ${booking.status === 'Completed' ? 'selected' : ''}>Completed</option>
+  <option value="Declined" ${booking.status === 'Declined' ? 'selected' : ''}>Declined</option>
+</select>
+</td>
+
+            
             <td>${booking.message || ''}</td>
           `;
           body.appendChild(row);
@@ -105,6 +115,26 @@
         window.location.href = '/admin/login';
       }
     }
+<script>
+async function updateStatus(index, status) {
+  const response = await fetch('/admin/update-status', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      index: index,
+      status: status
+    })
+  });
+
+  if (response.ok) {
+    loadAppointments();
+  } else {
+    alert("Status update failed");
+  }
+}
+
 
     loadAppointments();
   </script>
