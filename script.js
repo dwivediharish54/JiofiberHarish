@@ -111,6 +111,7 @@ if (bookingForm) {
       serviceType: values.serviceType,
       preferredDate: values.preferredDate,
       preferredTime: values.preferredTime,
+      address: values.address
       message: values.message,
       status: 'Pending',
       createdAt: new Date().toISOString(),
