@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Dashboard | Jio WiFi</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-logo">Jio</span>
+        <div>
+          <h1>Booking Dashboard</h1>
+          <p>Manage all Jio WiFi appointment requests from one place.</p>
+        </div>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="#dashboard">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container" id="dashboard">
+      <div class="section-header">
+        <p class="section-label">Manage bookings</p>
+        <h2>See all appointment requests and update their status.</h2>
+        <p>Use the dashboard to mark completed requests, delete old entries, or export booking details.</p>
+      </div>
+
+      <div class="dashboard-top">
+        <div class="stats-grid">
+          <div class="dashboard-card">
+            <p class="card-label">Total Requests</p>
+            <strong id="totalCount">0</strong>
+          </div>
+          <div class="dashboard-card">
+            <p class="card-label">Pending</p>
+            <strong id="pendingCount">0</strong>
+          </div>
+          <div class="dashboard-card">
+            <p class="card-label">Completed</p>
+            <strong id="completedCount">0</strong>
+          </div>
+        </div>
+        <button class="button button-secondary" id="clearAllButton">Clear All Requests</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="dashboard-table" id="dashboardTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Service</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bookingList"></tbody>
+        </table>
+        <p class="empty-state hidden" id="emptyState">No booking requests have been received yet.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Contact</h3>
+        <p>Harish Kumar Dwivedi</p>
+        <p>Jio WiFi Engineer & Booking Agent</p>
+        <p>Phone: +919479913226</p>
+        <p>Email: dwivediharish78@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harish Kumar Dwivedi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Appointments | Jio WiFi</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-logo">Jio</span>
+        <div>
+          <h1>Admin Appointments</h1>
+          <p>View and manage all appointment requests.</p>
+        </div>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">Home</a>
+        <a href="/admin/logout">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container">
+      <div class="section-header">
+        <p class="section-label">Appointment Requests</p>
+        <h2>All bookings in one place.</h2>
+        <p>Only authenticated admin users can see this page.</p>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="dashboard-table" id="appointmentsTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Service</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Status</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody id="appointmentsBody"></tbody>
+        </table>
+        <p class="empty-state hidden" id="emptyAppointments">No appointment requests yet.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Contact</h3>
+        <p>Harish Kumar Dwivedi</p>
+        <p>Jio WiFi Engineer & Booking Agent</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harish Kumar Dwivedi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    async function loadAppointments() {
+      try {
+        const res = await fetch('/admin/bookings');
+        if (!res.ok) {
+          window.location.href = '/admin/login';
+          return;
+        }
+
+        const bookings = await res.json();
+        const body = document.getElementById('appointmentsBody');
+        const empty = document.getElementById('emptyAppointments');
+        body.innerHTML = '';
+
+        if (!bookings || bookings.length === 0) {
+          empty.classList.remove('hidden');
+          return;
+        }
+
+        empty.classList.add('hidden');
+        bookings.forEach((booking, index) => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${booking.customerName}</td>
+            <td>${booking.customerPhone}</td>
+            <td>${booking.customerEmail}</td>
+            <td>${booking.serviceType}</td>
+            <td>${booking.preferredDate}</td>
+            <td>${booking.preferredTime}</td>
+            <td>${booking.status}</td>
+            <td>${booking.message || ''}</td>
+          `;
+          body.appendChild(row);
+        });
+      } catch (error) {
+        window.location.href = '/admin/login';
+      }
+    }
+
+    loadAppointments();
+  </script>
+</body>
+</html>

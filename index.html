@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jio WiFi Booking & Plans | Harish Kumar Dwivedi</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-logo">Jio</span>
+        <div>
+          <h1>Jio WiFi Booking</h1>
+          <p>Professional booking and appointment management for your Jio WiFi needs.</p>
+        </div>
+      </div>
+      <nav class="site-nav">
+        <a href="#plans">Plans</a>
+        <a href="#booking">Book Now</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#contact">Contact</a>
+        <a href="/admin/login.html">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Hi, I'm Harish Kumar Dwivedi</p>
+          <h2>Get complete Jio WiFi booking information, schedule appointments, and choose the best plan.</h2>
+          <p>Fast, reliable Jio WiFi support for installation, recharge, service upgrades and appointment scheduling.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#booking">Schedule Appointment</a>
+            <a class="button button-secondary" href="#plans">View Plans</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <h3>Booking Made Simple</h3>
+            <ul>
+              <li>Explore Jio WiFi plans</li>
+              <li>Choose appointment time</li>
+              <li>Receive booking confirmation</li>
+            </ul>
+            <div class="hero-stats">
+              <div>
+                <strong>100k+</strong>
+                <span>Successful installs</span>
+              </div>
+              <div>
+                <strong>10 Am To 6 Pm</strong>
+                <span>My support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="plans">
+      <div class="section-header">
+        <p class="section-label">Available Jio WiFi Plans</p>
+        <h2>Choose the plan that fits your home or office.</h2>
+      </div>
+      <div class="plans-grid">
+        <article class="plan-card">
+          <h3>Bronze</h3>
+          <p class="plan-price">₹399 + taxes / month</p>
+          <ul>
+            <li>Up to 30 Mbps</li>
+            <li>Unlimited</li>
+            <li>Free installation</li>
+          </ul>
+          <p class="plan-note">Ideal for light browsing and video calls.</p>
+        </article>
+        <article class="plan-card plan-card-featured">
+          <h3>Silver</h3>
+          <p class="plan-price">₹599 + taxes / month</p>
+          <ul>
+            <li>Up to 30 Mbps + Set up Box</li>
+            <li>Unlimited data + Entertainment </li>
+            <li>Free installation</li>
+          </ul>
+          <p class="plan-note">Best for families and small offices.</p>
+        </article>
+        <article class="plan-card">
+          <h3>Gold</h3>
+          <p class="plan-price">₹799 + taxes / month</p>
+          <ul>
+            <li>Up to 100 Mbps</li>
+            <li>Unlimited data</li>
+            <li>Free installation</li>
+          </ul>
+          <p class="plan-note">Great for streaming, gaming, and heavy usage.</p>
+        </article>
+        <article class="plan-card">
+          <h3>Platinum</h3>
+          <p class="plan-price">₹899 + taxes / month</p>
+          <ul>
+            <li>Up to 100 Mbps + setup box</li>
+            <li>Unlimited data + Entertainment </li>
+            <li>Free installation</li>
+          </ul>
+          <p class="plan-note">Premium solution for business use.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt container" id="booking">
+      <div class="section-split">
+        <div>
+          <p class="section-label">Book your appointment</p>
+          <h2>Schedule an appointment with your Jio WiFi expert.</h2>
+          <p>Fill the form and I will contact you with all booking details, package recommendations, and installation support.</p>
+          <div class="booking-info-cards">
+            <article>
+              <h3>Appointment confirmed</h3>
+              <p>Receive confirmation immediately after booking.</p>
+            </article>
+            <article>
+              <h3>Plan guidance</h3>
+              <p>Get personalized plan recommendations.</p>
+            </article>
+          </div>
+        </div>
+        <div class="booking-form-card">
+          <form id="bookingForm">
+            <div class="form-group">
+              <label for="customerName">Full Name</label>
+              <input type="text" id="customerName" name="customerName" placeholder="Harish Kumar" required />
+            </div>
+            <div class="form-group">
+              <label for="customerPhone">Phone Number</label>
+              <input type="tel" id="customerPhone" name="customerPhone" placeholder="98765 43210" required />
+            </div>
+            <div class="form-group">
+              <label for="customerEmail">Email Address</label>
+              <input type="email" id="customerEmail" name="customerEmail" placeholder="harish@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="serviceType">Service Type</label>
+              <select id="serviceType" name="serviceType" required>
+                <option value="">Select a service</option>
+                <option value="New Connection">New Connection</option>
+                <option value="Recharge">Recharge</option>
+                <option value="Installation Support">Installation Support</option>
+                <option value="Plan Upgrade">Plan Upgrade</option>
+                <option value="Technical Support">Technical Support</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="preferredDate">Preferred Date</label>
+              <input type="date" id="preferredDate" name="preferredDate" required />
+            </div>
+            <div class="form-group">
+              <label for="preferredTime">Preferred Time</label>
+              <input type="time" id="preferredTime" name="preferredTime" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell me about your requirements"></textarea>
+            </div>
+            <button class="button button-primary" type="submit">Submit Booking Request</button>
+          </form>
+          <div id="confirmationMessage" class="confirmation-message hidden"></div>
+          <div id="contactActions" class="contact-actions hidden"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="how-it-works">
+      <div class="section-header">
+        <p class="section-label">How it works</p>
+        <h2>Complete booking information in three simple steps.</h2>
+      </div>
+      <div class="how-grid">
+        <article class="how-step">
+          <span>1</span>
+          <h3>Choose a plan</h3>
+          <p>Review the available Jio WiFi plans and select the best option for your use case.</p>
+        </article>
+        <article class="how-step">
+          <span>2</span>
+          <h3>Schedule an appointment</h3>
+          <p>Fill the booking form with your preferred time and service requirement.</p>
+        </article>
+        <article class="how-step">
+          <span>3</span>
+          <h3>Get confirmation</h3>
+          <p>I will contact you to confirm the appointment and finalize your Jio WiFi setup.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <h3>Contact</h3>
+        <p>Harish Kumar Dwivedi</p>
+        <p>Jio WiFi Engineer & Booking Agent</p>
+        <p>Phone: +919479913226</p>
+        <p>Email: dwivediharish78@gmail.com</p>
+      </div>
+      <div>
+        <h3>Need help?</h3>
+        <p>For urgent support or to confirm plan details, call or email directly.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harish Kumar Dwivedi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="contact-widget">
+    <a class="contact-button contact-call" href="tel:+919479913226" aria-label="Call now">
+      <span class="contact-icon">📞</span>
+      Call Now
+    </a>
+    <a class="contact-button contact-whatsapp" href="https://wa.me/919479913226?text=Hi%20Harish%2C%20I%20need%20help%20with%20Jio%20WiFi%20booking" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <span class="contact-icon">💬</span>
+      WhatsApp
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
