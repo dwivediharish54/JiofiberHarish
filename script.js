@@ -90,7 +90,7 @@ function clearAllBookings() {
 }
 
 if (bookingForm) {
-  bookingForm.addEventListener('submit', (event) => {
+  bookingForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const formData = new FormData(bookingForm);
