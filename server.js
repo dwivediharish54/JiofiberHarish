@@ -97,6 +97,7 @@ app.post('/api/bookings', async (req, res) => {
     preferredDate: values.preferredDate,
     preferredTime: values.preferredTime,
     message: values.message,
+    address: values.address,
     status: 'Pending',
     createdAt: new Date().toISOString(),
   };
