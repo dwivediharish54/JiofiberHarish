@@ -43,8 +43,8 @@
               <th>Date</th>
               <th>Time</th>
               <th>Status</th>
-              <th>Action</th>
               <th>Message</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody id="appointmentsBody"></tbody>
@@ -97,15 +97,17 @@
             <td>${booking.serviceType}</td>
             <td>${booking.preferredDate}</td>
             <td>${booking.preferredTime}</td>
-            <td>${booking.status}</td> 
-            <td>
+           <td>${booking.status}</td>
+
+<td>${booking.message || ''}</td>
+
+<td>
 <select onchange="updateStatus(${index}, this.value)">
-<option value="Pending" ${booking.status === 'Pending' ? 'selected' : ''}>Pending</option>
-<option value="Completed" ${booking.status === 'Completed' ? 'selected' : ''}>Completed</option>
-<option value="Declined" ${booking.status === 'Declined' ? 'selected' : ''}>Declined</option>
+    <option value="Pending" ${booking.status === 'Pending' ? 'selected' : ''}>Pending</option>
+    <option value="Completed" ${booking.status === 'Completed' ? 'selected' : ''}>Completed</option>
+    <option value="Declined" ${booking.status === 'Declined' ? 'selected' : ''}>Declined</option>
 </select>
 </td>
-<td>${booking.message || ''}</td>
 `;
           body.appendChild(row);
         });
